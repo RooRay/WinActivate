@@ -1,4 +1,4 @@
-@echo off
+@ECHO OFF
 
 :: BatchGotAdmin
 :-------------------------------------
@@ -26,24 +26,30 @@ if '%errorlevel%' NEQ '0' (
 :--------------------------------------
 
 @ECHO OFF
-color a
+color f
 CLS
-:: this ascii art is really hacky... if someone else wants to remake it to not be hacky, feel free.
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/CrimsonXMC/Windows-Activator/main/ascii.txt', '%tmp%\ascii.txt')"
-powershell -Command "Invoke-WebRequest https://raw.githubusercontent.com/CrimsonXMC/Windows-Activator/main/ascii.txt -OutFile %tmp%\ascii.txt"
-TYPE %TMP%\ascii.txt
-DEL %TMP%\ascii.txt
-:: i mean at least i delete the text file after its done with 
-ECHO Pick which version of Windows you want to activate.
-ECHO 1.Windows 10/11 Pro
-ECHO 2.Windows 10/11 Pro N
-ECHO 3.Windows 10/11 Pro For Workstations
-ECHO 4.Windows 10/11 Enterprise 
-ECHO 5.Windows 10/11 Enterprise N
-ECHO 6. Windows 10/11 Home
-ECHO 7. Windows 10/11 Home N
+echo.
+echo WinActivate V1.0 - Made by IcanLevitate/CrimsonXMC and RooRay
+echo.
+echo This software is freeware and is available on GitHub (github.com/RooRay/WinActivate). 
+echo If you paid for this you should probably demand your money back.
+echo.
+echo It is also recommended that you check the hash of this file with the one for the applicable version on GitHub to ensure the software you're running is trustworthy.
+echo.
+PAUSE 
+CLS
+ECHO 1) Windows 10/11 Pro
+ECHO 2) Windows 10/11 Pro N
+ECHO 3) Windows 10/11 Pro For Workstations
+ECHO 4) Windows 10/11 Enterprise 
+ECHO 5) Windows 10/11 Enterprise N
+ECHO 6) Windows 10/11 Home
+ECHO 7) Windows 10/11 Home N
+echo.
 
-CHOICE /C 1234567 /M "Enter your choice:"
+CHOICE /C 1234567 /M "Please enter the number for the version of Windows you would like to activate:"
+
+CLS
 
 :: Note - list ERRORLEVELS in decreasing order
 IF ERRORLEVEL 7 GOTO W10HOMEN
@@ -70,7 +76,6 @@ cscript slmgr.vbs /ipk "MH37W-N47XK-V7XM9-C7227-GCQG9"
 cscript slmgr.vbs /skms kms.lotro.cc
 cscript slmgr.vbs /ato
 @ECHO OFF
-pause
 GOTO End
 
 :W10PROWORKSTATION
@@ -98,6 +103,7 @@ cscript slmgr.vbs /ipk "TTNVB-4X9Q3-TJR4H-KHJW4"
 cscript slmgr.vbs /skms kms.lotro.cc
 cscript slmgr.vbs /ato
 @ECHO OFF
+GOTO End
 
 :W10HOME
 cd C:\Windows\System32
@@ -105,9 +111,8 @@ cd C:\Windows\System32
 cscript slmgr.vbs /ipk "TX9XD-98N7V-6WMQ6-BX7FG-H8Q99" 
 cscript slmgr.vbs /skms kms.lotro.cc
 cscript slmgr.vbs /ato
-pause
 @ECHO OFF
-GOTO END
+GOTO End
 
 :W10HOMEN
 cd C:\Windows\System32
@@ -119,3 +124,11 @@ cscript slmgr.vbs /ato
 GOTO End
 
 :End
+cls
+cscript slmgr.vbs /xpr
+echo Windows has been activated successfully, thanks for using this script!
+echo.
+echo If you like, you could also maybe give the repo a star on GitHub (https://github.com/RooRay/WinActivate)? 
+echo I'd really appreciate that!
+echo.
+pause
