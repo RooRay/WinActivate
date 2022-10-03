@@ -1,5 +1,5 @@
-# WinActivate
-A tool made in batchfile (that also has an executeable) for activating Windows 10 or 11. Made by CrimsonXMC/IcanLevitate and improved by yours truly :)
+<img src="https://socialify.git.ci/RooRay/WinActivate/image?description=1&language=1&name=1&pattern=Solid&theme=Dark" alt="WinActivate" width="640" height="320" />
+A tool made in batchfile for activating Windows 10 or 11. Made by CrimsonXMC/IcanLevitate and improved by yours truly :)
 
 ## Windows Versions Supported
 Both Windows 11 and 10 are supported for the versions listed below. If on Windows 11, the steps will be the same as on Windows 10.
